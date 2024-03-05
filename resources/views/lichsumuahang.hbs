@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+<link href="/public/css/main.css" rel="stylesheet">
+<link href="/public/css/base.css" rel="stylesheet">
+<link href="/public/css/giohang.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+</head>
+{{> Header}}
+		<div class="container">
+			<div class="grid">
+				<div>
+					<div class="">
+						<div class="row">
+							<nav class="collapse navbar-collapse bs-navbar-collapse"
+								role="navigation">
+								<ul class='main-nav nav navbar-nav menu'>
+									<li class="menu level0"><a class=''
+										href='/cakeshop'>Trang
+												chủ</a></li>
+									<li class="menu level0"><a class=''
+										href='/cakeshop/product'>Sản
+												phẩm</a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/introduce'>Giới
+												thiệu</a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/contact'>Liên
+												hệ</a></li>
+								</ul>
+								<hr>
+							</nav>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+	<div class='container gio_hang'>
+	<div class='grid'>
+		<table class='trong_giohang'>
+			<tr style="text-align: center;">
+				<th>Đơn hàng</th>
+				<th>Giá tiền</th>
+				<th>Ngày đặt</th>
+				<th>Trạng thái đơn hàng</th>
+			</tr>    
+			{{#each product}}
+			<tr class="item" style="text-align: center;">
+				<td id = "maso{{this.Id_bill}}">
+					{{this.Id_cart}}
+				</td>
+				<td id="giatien{{this.Id_bill}}">{{this.Pay}} </td>
+				<td id="ngay{{this.Id_bill}}">{{this.Date}}</td>
+                
+                <td><a id="nutnha{{this.Id_bill}}" class="nutnhan" href='/cakeshop/cart/inf/{{this.State_cart}}/{{this.Id_cart}}'></a></td>
+			</tr>
+             <script>      
+                var getday = document.getElementById(`ngay{{this.Id_bill}}`);
+                var date = new Date(getday.innerText),
+                mnth = ("0" + (date.getMonth()+1)).slice(-2),
+                day  = ("0" + date.getDate()).slice(-2);
+                getday.innerText= `${[day, mnth, date.getFullYear()].join("-")}`;
+				document.getElementById(`maso{{this.Id_bill}}`).innerText = document.getElementById(`maso{{this.Id_bill}}`).innerText.split(",")[0];
+            </script>
+			<script>
+								  document.getElementById("giatien{{this.Id_bill}}").innerText =  `${document.getElementById("giatien{{this.Id_bill}}").innerText}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + " VND" 
+							</script>
+                            <script>
+                                
+                                if(`a{{this.State_cart}}`[1] == '4')
+                                {
+                                    document.getElementById(`nutnha{{this.Id_bill}}`).innerText = "Đã nhận hàng";
+                                }
+                                else{
+                                    document.getElementById(`nutnha{{this.Id_bill}}`).innerText = "Đã hủy";
+                                }
+                            </script>
+			{{/each}}
+            
+		</table>
+		 <ul class="listPage">
+           
+                                            </ul> 
+                                            <script src="/public/pageging.js"></script>
+			
+		</div>
+	</div>	
+{{> Footer}}
+</body>
+</html>

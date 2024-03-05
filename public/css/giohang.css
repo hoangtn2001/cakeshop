@@ -1,0 +1,125 @@
+@charset "utf-8";
+.gio_hang{
+	margin: 20px;
+	font-size: 18px;
+}
+.trong_giohang{
+	width: 100%;
+	border-collapse: collapse;
+	
+}
+th{
+	text-align: center;
+	padding: 5px;
+	color: #fff;
+	background: #d74b33;
+	border-radius: 4px;
+}
+.san_pham{
+	display:flex;
+	flex-wrap: wrap;
+}
+td{
+	padding: 10px 5px;
+}
+td input{
+	width: 40px;
+	height: 25px;
+	padding: 5px;
+	border-radius: 5px;
+}
+td img{
+	width: 160px;
+	height: 150px;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+.khoangtrong{
+	height: 200px;
+}
+.nutnhan{
+	text-decoration: none;
+	color:black;
+	cursor:pointer;
+}
+.nutnhan:hover{
+	color: rgba(218, 38, 38, 0.934);;
+}
+.thanhtoan{
+	border-radius: 4px;
+	margin: 0px 1150px;
+	width: 120px;
+	height:30px;
+	cursor:pointer;
+}
+.thanhtoan.active,
+.thanhtoan:hover{
+	color:red;
+}
+.nuttrolai{
+	margin:20px;
+	height: 30px;
+	cursor:pointer;
+	border-radius:4px;
+}
+.linktrolai{
+	text-decoration:none;
+	color:black;
+}
+
+
+
+.mid {
+	text-align: center;
+	padding-top: 15px;
+  }
+  
+  h4 {
+	text-align: center;
+  }
+  
+  .signform {
+	width: 650px;
+	margin-left: 20px;
+  }
+  
+  form label {
+	display: flex;
+	margin-top: 20px;
+	font-size: 18px;
+	margin-bottom: 5px;
+  }
+  
+  form input {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border: 1px solid gray;
+	border-radius: 6px;
+	outline: none;
+	font-size: 18px;
+	  
+  }
+  input[type="button"] {
+	width: 320px;
+	height: 35px;
+	margin-top: 20px;
+	border: none;
+	background-color: #D74B33;
+	color: white;
+	font-size: 18px;
+  }
+  
+  
+  
+  .form-group {
+	display: flex;
+	margin-bottom: 16px;
+	flex-direction: column;
+	  
+  }
+  .form-group.invalid .form-message {
+	color: #f33a58;
+	font-size: 13px;
+  }
+  

@@ -1,0 +1,153 @@
+@charset "utf-8";
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
+}
+
+.signup-box {
+  width: 660px;
+  height: 620px;
+  margin: auto;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.login-box {
+  width: 370px;
+  height: 290px;
+  margin: auto;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.mid {
+  text-align: center;
+  padding-top: 15px;
+}
+
+h4 {
+  text-align: center;
+}
+
+.signform {
+  width: 650px;
+  margin-left: 20px;
+}
+
+form label {
+  display: flex;
+  margin-top: 20px;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+  font-size: 18px;
+}
+input[type="button"] {
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #D74B33;
+  color: white;
+  font-size: 18px;
+}
+.sex{
+  width: 10%;
+}
+.elseinfo{
+  color: #D74B33;
+  font-size: 25px;
+}
+.signuptext {
+  text-align: center;
+  padding-top: 60px;
+  font-size: 15px;
+}
+.haveaccount {
+	text-align: center;
+	padding-top: 310px;
+    font-size: 15px;
+}
+.para-2 {
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  padding-top: 25px;
+  margin-top: 20px;
+}
+.para-2 a {
+  color: #49c1a2;
+}
+.btnxacnhan{
+	margin: 30px 0 0 0;
+	height: 28px;
+	width: 200px;
+	font-size: 17px;
+	border-radius: 7px;
+	font-weight: 1000;	
+  cursor: pointer;
+}
+.btnxacnhan.active ,
+.btnxacnhan:hover {
+	background-color: #D74B33;
+	color: white;
+}
+.btnxacnhan2{
+	margin: 30px 0 0 0;
+	height: 28px;
+	width: 325px;
+	font-size: 20px;
+	border-radius: 7px;
+	font-weight: 1000;
+}
+.btnxacnhan2.active ,
+.btnxacnhan2:hover {
+	background-color: #D74B33;
+	color: white;
+}
+.hutao table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.linkcapnhat{
+	text-decoration:none;
+	color: black;
+	
+}
+
+.hutao td, th {
+  border: 0px solid #dddddd;
+  text-align: left;
+  padding: 10px 2px 20px 10px;
+}
+/* .hutao tr:hover{background-color: #dddddd;} */
+.haha{
+  font-size: 18px;
+}
+.formRadi{
+  width: 10%;
+}
+.form-group {
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+.form-group.invalid .form-message {
+  color: #f33a58;
+}
+.select{
+  width: 7%;
+  padding: 10px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}

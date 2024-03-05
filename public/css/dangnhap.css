@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+.form-horizontal{
+	font-size: 16px;
+	margin-left: 250px;
+}
+.form-group{
+	display: flex;
+}
+.col-sm-4{
+	margin-left: 5px;
+}
+.form-control{
+	margin: 20px;
+}
+.form-control1{
+	margin-left: 50px
+	
+}
+.col-sm-41 {
+	margin:20px 5px 20px 0;
+}
+.form-group2{
+	margin:0 0 0 100px ;
+	padding-bottom: 100px
+}
+.line-quenmk{
+	text-decoration: none;
+	color: #d82505;
+}

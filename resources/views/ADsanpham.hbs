@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Responsive bootstrap 4 admin template" name="description">
+        <meta content="Coderthemes" name="author">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <link href="/public/css/main.css" rel="stylesheet">
+          <link href="/public/css/admin.css" rel="stylesheet">
+     <link
+	href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css"
+	rel="stylesheet">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/public/assets/images/favicon.ico">
+
+        <!-- Responsive Table css -->
+        <link href="/public/assets/libs/rwd-table/rwd-table.min.css" rel="stylesheet" type="text/css">
+
+        <!-- App css -->
+        <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
+        <link href="/public/assets/css/icons.min.css" rel="stylesheet" type="text/css">
+        <link href="/public/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
+      
+
+    </head>
+    <body data-layout="horizontal">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Navigation Bar-->
+            <header id="topnav">
+                    <!-- Topbar Start -->
+                    <div class="navbar-custom">
+                        <div class="container-fluid">
+                            <ul class="list-unstyled topnav-menu float-right mb-0">    
+                               <li class="header__navbar-item"><a class="linkten" style="font-size: 20px;" href="/login/getinfor">Xin chào: {{name}} </a>
+						</a></li>
+						<li class="header__navbar-item"><a class="linkten" style="font-size: 20px;" href="/login/logout"
+							class="header__navbar-item-link header__navbar-item-link--bold">
+								<i class="fa-solid fa-arrow-right-from-bracket"></i> LogOut
+						</a></li>
+    
+                            </ul>
+                             <!-- LOGO -->
+                              <div class="logo "><i class=" fa-solid fa-utensils"></i> GOODCAKE</div>
+                            
+                           
+    
+                           
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- end Topbar -->  
+
+                     <div class="topbar-menu">
+                        <div class="container-fluid">
+                            <div id="navigation">
+                                <!-- Navigation Menu-->
+                                <ul class="navigation-menu">
+                                    <li class="has-submenu">
+                                        <a href="/admin"> <i class="mdi mdi-view-dashboard"></i>Khách hàng</a>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                       <a> <i class="mdi mdi-view-dashboard"></i>Danh mục</a>
+                                        <ul class="submenu">
+                                            <li><a href="/admin/category">Tất cả danh mục</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                       <a> <i class="mdi mdi-view-dashboard"></i>Sản phẩm</a>
+                                        <ul class="submenu">
+                                            <li><a href="/admin/product/add">Thêm sản phẩm</a></li>
+                                            <li><a href="/admin/product">Tất cả sản phẩm</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                        <a href="#"> <i class="mdi mdi-view-dashboard"></i>Đơn hàng</a>
+                                        <ul class="submenu">
+                                           <li><a href="/admin/bill/1">Chờ xác nhận</a></li>
+                                            <li><a href="/admin/bill/2">Đang chuẩn bị</a></li>
+                                            <li><a href="/admin/bill/3">Đang giao</a></li>
+                                            <li><a href="/admin/bill/4">Đã thanh toán</a></li>
+                                            <li><a href="/admin/bill/5">Tất cả đơn hàng</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a> <i class="mdi mdi-view-dashboard"></i>Thống kê doanh thu</a>
+                                        <ul class="submenu">
+                                             <li><a href="/admin/revenue">Theo năm</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                                <!-- End navigation menu -->
+                                 <form id="search">
+							<div class="headerbelow__navbar-search" style="margin: 13px 0px 0px 355px;">
+								<input type="text" id="search" name="search" class="headerbelow__navbar-input"
+									placeholder="Tìm kiếm..." style="outline: auto; padding: 0 8px; width: 119%;">                                    
+							</div>
+							<div style="display: inline;">
+                                 <button class="headerbelow__navbar-search-btn" style="padding: 1px 6px; background-color:gray; border-radius: 4px;">
+									<i
+										class="headerbelow__navbar-search-btn-icon fa-solid fa-magnifying-glass-dollar" style="color: white; "></i>
+								</button>
+                            </div>
+								
+							</form>
+                             <script>
+                                let path = window.location.pathname;
+                                if(path.indexOf("product") != -1)
+                                {
+                                    document.getElementById('search').action = "/admin/product/search";
+                                }
+                                else{
+                                    document.getElementById('search').action = "/admin/search";
+                                }
+                            </script>
+    
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- end #navigation -->
+                        </div>
+                        <!-- end container -->
+                    </div> 
+                </header>
+
+                <!-- End Navigation Bar-->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    
+                                    <h4 class="page-title">Quản lí sản phẩm</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <div class="table-rep-plugin">
+                                        <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table table-striped mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th data-priority="1">Danh mục</th>
+                                                        <th data-priority="3">Tên bánh</th>
+                                                        <th data-priority="1">Mô tả</th>
+                                                        <th data-priority="3">Số lượng</th>
+                                                        <th data-priority="3">Số lượng mua</th>
+                                                        <th data-priority="3">Gía tiền</th>
+                                                       
+                                                        <th data-priority="3">Nổi bật</th>
+                                                         <th data-priority="3">Trạng thái</th>
+                                                        <th data-priority="3">Sửa</th>
+                                                        <th data-priority="3">Xóa</th>
+                                                         <th data-priority="3">Ảnh</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {{#each result}}
+                                                    <form id="form{{this.Id_product}}"  method="post">
+                                                    <tr class = "item">
+                                                        <td>{{this.Id_product}}</td>
+                                                        <td>{{this.Name_category}}</td>
+                                                        <td><input name="name"  value="{{this.Name_product}}"></td>
+                                                        <td><input name="descri" value="{{this.Describe}}"></td>
+                                                        <td><input name="quantity" style="width: 50px;" value="{{this.Quantity_pro}}"></td>
+                                                        <td><input name="quantity_bought" style="width: 50px;" value="{{this.Quantity_pro_bought}}"></td>
+                                                        <td><input name="price" style="width: 80px;" id="giatien{{this.Id_product}}"   value="{{this.Price}}" onchange="formatCash(`giatien{{this.Id_product}}`)"></td>                         
+                                                        </td>
+                                                        <td><button id ="buton{{this.Id_product}}{{this.Fe_pro}}"></button></td>
+                                                        <td><button id ="butonstate{{this.Id_product}}{{this.Pro_state}}"></button></td>
+                                                         <td><button id="button{{this.Id_product}}" onclick="update(`form{{this.Id_product}}`)">Sửa</button> </td>
+                                                          <td><button id="button{{this.Id_product}}" onclick="xoa(`form{{this.Id_product}}`)">xóa</button></td>  
+                                                        </form>
+                                                          <td> <img class="image" src="{{this.Link_image}}" alt=""> <input value="{{this.Link_image}}">
+                                                        <form action="/admin/multipleUpload/{{this.Id_product}}" method="post" enctype="multipart/form-data">
+                                                        <div class="form-group">
+                                                            <label for="example-input-file"> </label>
+                                                            <input type="file" name="many-files" multiple id="input-many-files{{this.Id_product}}" class="form-control-file border">
+                                                            <input name="idproduct" name="idproduct" value="{{this.Id_product}}"type="hidden">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                        <div class="preview-images{{this.Id_product}}"></div>   
+                                                    </tr>
+                                                     <script>
+                                                        document.getElementById("giatien{{this.Id_product}}").value =  `${document.getElementById("giatien{{this.Id_product}}").value}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+                                                        function formatCash(a) {
+                                                        return document.getElementById(a).value =  `${document.getElementById(a).value}000`.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                                                       
+                                                        }
+                                                    </script>
+                                                    <script>
+                                                        function update(a){
+                                                            if(confirm('Bạn chắc chắn với sửa đổi ?') == true)
+                                                            {
+                                                            let idproduct = a.split('m');
+                                                            idproduct=idproduct[idproduct.length-1]*1;
+                                                            document.getElementById(a).action = `/admin/update/${idproduct}`;
+                                                            }else{
+                                                               document.getElementById(a).action = `/admin/update/-1`;
+                                                            }
+                                                            
+                                                        }
+                                                     </script>
+                                                     <script>
+                                                        function xoa(a){
+                                                            if(confirm('Bạn chắc chắn muốn xóa sản phẩm ?') == true){
+                                                             let idproduct = a.split('m');
+                                                            idproduct=idproduct[idproduct.length-1]*1;
+                                                            document.getElementById(a).action = `/admin/delete/${idproduct}`;  
+                                                            }  else{
+                                                                 document.getElementById(a).action = `/admin/update/-1`;
+                                                            }
+                                                        }
+                                                     </script>
+                                                    </form>
+                                                       
+                                                    <script>
+                                                        if(document.getElementById(`buton{{this.Id_product}}{{this.Fe_pro}}`).id == `buton{{this.Id_product}}0`){
+                                                            document.getElementById(`buton{{this.Id_product}}{{this.Fe_pro}}`).innerHTML = `<a style = "color: black" href="/admin/fepro/{{this.Id_product}}/{{this.Fe_pro}}">Bật</a>`;
+                                                            document.getElementById(`buton{{this.Id_product}}{{this.Fe_pro}}`).style = 'background-color: #e31427;'
+                                                        }
+                                                        else{
+                                                           
+                                                             document.getElementById(`buton{{this.Id_product}}{{this.Fe_pro}}`).innerHTML = `<a style = "color: black" href="/admin/fepro/{{this.Id_product}}/{{this.Fe_pro}}">Tắt</a>`;
+                                                            document.getElementById(`buton{{this.Id_product}}{{this.Fe_pro}}`).style = 'background-color: #14ff14;'
+                                                        }
+                                                    </script>
+                                                    <script>
+                                                        if(document.getElementById(`butonstate{{this.Id_product}}{{this.Pro_state}}`).id == `butonstate{{this.Id_product}}0`){
+                                                            document.getElementById(`butonstate{{this.Id_product}}{{this.Pro_state}}`).innerHTML = `<a style = "color: black" href="/admin/prostate/{{this.Id_product}}/{{this.Pro_state}}">Khóa</a>`;
+                                                                                                                        document.getElementById(`butonstate{{this.Id_product}}{{this.Pro_state}}`).style = 'background-color: #14ff14;'
+                                                        }
+                                                        else{
+                                                           
+                                                             document.getElementById(`butonstate{{this.Id_product}}{{this.Pro_state}}`).innerHTML = `<a style = "color: black" href="/admin/prostate/{{this.Id_product}}/{{this.Pro_state}}">mở</a>`;
+                                                             document.getElementById(`butonstate{{this.Id_product}}{{this.Pro_state}}`).style = 'background-color: #e31427;'
+
+                                                        }
+                                                    </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   
+                <script>
+        $(document).ready(function() {
+      
+            let imagesPreview = function(input, placeToInsertImagePreview) {
+                if (input.files) {
+                    let filesAmount = input.files.length;
+                    for (i = 0; i < filesAmount; i++) {
+                        let reader = new FileReader();
+                        reader.onload = function(event) {
+                            $($.parseHTML("<img>")).attr("src", event.target.result).appendTo(placeToInsertImagePreview);
+                        }
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            };
+            $("#input-many-files{{this.Id_product}}").on("change", function() {
+                imagesPreview(this, "div.preview-images{{this.Id_product}}");
+            });
+            
+        });
+    </script>
+    
+                                                    {{/each}}   
+                                                                                               
+                                                </tbody>
+                                            </table>
+                                            <ul class="listPage">
+           
+                                            </ul> 
+                                            <script src="/public/pageging.js"></script>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                    </div>
+                    <!-- end container-fluid -->
+
+                </div>
+                <!-- end content -->
+   
+
+                <!-- Footer Start -->
+                <footer class="footer" style="padding: 10px 15px 10px;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+				<h5 class="final__text" style="font-size: 20px; color: black;"> 2023, Have good time</h5>                             
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+  
+        <script src="/public/assets/libs/rwd-table/rwd-table.min.js"></script>
+
+        
+
+        <!-- App js -->
+        <script src="/public/assets/js/app.min.js"></script>
+        <script src="/public/assets/js/pages/datatables.init.js"></script>
+
+    </body>
+</html>

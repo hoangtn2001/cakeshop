@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Responsive bootstrap 4 admin template" name="description">
+        <meta content="Coderthemes" name="author">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <link href="/public/css/main.css" rel="stylesheet">
+            
+     <link
+	href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css"
+	rel="stylesheet">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/public/assets/images/favicon.ico">
+
+        <!-- Responsive Table css -->
+        <link href="/public/assets/libs/rwd-table/rwd-table.min.css" rel="stylesheet" type="text/css">
+
+        <!-- App css -->
+        <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
+        <link href="/public/assets/css/icons.min.css" rel="stylesheet" type="text/css">
+        <link href="/public/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
+        <link href="/public/css/admin.css" rel="stylesheet">
+    </head>
+
+    <body data-layout="horizontal">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Navigation Bar-->
+            <header id="topnav">
+                    <!-- Topbar Start -->
+                    <div class="navbar-custom">
+                        <div class="container-fluid">
+                            <ul class="list-unstyled topnav-menu float-right mb-0">    
+                               <li class="header__navbar-item"><a class="linkten" style="font-size: 20px;" href="/login/getinfor">Hello:  </a>
+						</a></li>
+						<li class="header__navbar-item"><a href=""
+							class="header__navbar-item-link header__navbar-item-link--bold">
+								<i class="fa-solid fa-arrow-right-from-bracket"></i> LogOut
+						</a></li>
+    
+                            </ul>
+                             <!-- LOGO -->
+                              <div class="logo "><i class=" fa-solid fa-utensils"></i> GOODCAKE</div>
+                            
+                           
+    
+                           
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- end Topbar -->  
+
+                     <div class="topbar-menu">
+                        <div class="container-fluid">
+                            <div id="navigation">
+                                <!-- Navigation Menu-->
+                                <ul class="navigation-menu">
+                                    <li class="has-submenu">
+                                        <a href="/admin"> <i class="mdi mdi-view-dashboard"></i>Khách hàng</a>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                       <a> <i class="mdi mdi-view-dashboard"></i>Danh mục</a>
+                                        <ul class="submenu">
+                                            <li><a href="index.html">Thêm danh mục</a></li>
+                                            <li><a href="dashboard_2.html">Tất cả danh mục</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                       <a> <i class="mdi mdi-view-dashboard"></i>Sản phẩm</a>
+                                        <ul class="submenu">
+                                            <li><a href="index.html">Thêm sản phẩm</a></li>
+                                            <li><a href="dashboard_2.html">Tất cả sản phẩm</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                        <a href="#"> <i class="mdi mdi-view-dashboard"></i>Đơn hàng</a>
+                                        <ul class="submenu">
+                                            <li><a href="index.html">Chờ xác nhận</a></li>
+                                            <li><a href="dashboard_2.html">Đang chuẩn bị</a></li>
+                                            <li><a href="dashboard_2.html">Đang giao</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a> <i class="mdi mdi-view-dashboard"></i>Thống kê doanh thu</a>
+                                        <ul class="submenu">
+                                            <li><a href="index.html">Theo tháng</a></li>
+                                            <li><a href="dashboard_2.html">Theo ngày</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+
+                                <!-- End navigation menu -->
+                                <form action ="/cakeshop/product/search">
+							<div class="headerbelow__navbar-search" style="margin: 13px 0px 0px 355px;">
+								<input type="text" id="search" name="search" class="headerbelow__navbar-input"
+									placeholder="Tìm kiếm..." style="outline: auto; padding: 0 8px; width: 119%;">                                    
+							</div>
+							<div style="display: inline;">
+                                 <button class="headerbelow__navbar-search-btn" style="padding: 1px 6px; background-color:gray; border-radius: 4px;">
+									<i
+										class="headerbelow__navbar-search-btn-icon fa-solid fa-magnifying-glass-dollar" style="color: white; "></i>
+								</button>
+                            </div>
+								
+							</form>
+    
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- end #navigation -->
+                        </div>
+                        <!-- end container -->
+                    </div> 
+                </header>
+
+               <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    
+                                    <h4 class="page-title">Thêm sản phẩm</h4>
+                                </div>
+                            </div>
+                        </div>
+
+ <div>
+    <h3class="page-title" >Chọn ảnh cho sản phẩm</h3>
+           <form action="admin/multipleUpload/{{result}}" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="example-input-file"> </label>
+                        <input type="file" name="many-files" multiple id="input-many-files" class="form-control-file border">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="preview-images"></div>
+            </div>
+        </div>   
+    </div>
+
+
+                <!-- end content -->
+
+                
+
+                <!-- Footer Start -->
+                <footer class="footer" style="padding: 10px 15px 10px;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+				<h5 class="final__text" style="font-size: 20px; color: black;"> 2023, Have good time</h5>                             
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Vendor js -->
+       <!-- <script src="/public/assets/js/vendor.min.js"></script> 
+
+        <!-- Responsive Table js -->
+        <script src="/public/assets/libs/rwd-table/rwd-table.min.js"></script>
+
+        <!-- Init js -->
+        <script src="/public/assets/js/pages/responsive-table.init.js"></script>
+
+        <!-- App js -->
+        <script src="/public/assets/js/app.min.js"></script>
+        <script src="/public/assets/js/pages/datatables.init.js"></script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

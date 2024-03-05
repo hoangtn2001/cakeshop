@@ -1,0 +1,100 @@
+
+<footer class="footer">
+			<div class="grid">
+			<div class="footer__center">
+				<div class="footer__Brand">
+					<div class="footer__list-brand">
+							<ul class="footer__navbar-list">
+								<li class="footer__navbar-brand"><i
+									class="footer__navbar--icon fa-solid fa-utensils"></i>
+									GOODCAKE</li>
+								<li class="footer__navbar-slogan">Ngọt ngào đưa đến hạnh phúc</li>
+							</ul>
+						</div>
+				</div>
+				<div class="grid__row21">
+					<div class="grid__column-2-4">
+						<h3 class="footer__heading">
+							Thông tin liên hệ
+						</h3>
+						<ul class="footer__list">
+								<li class="footer__list--text"><i
+							class="fa-solid fa-phone"></i> Hostline: 0353739060</li>
+						</ul>
+				</div>
+					<div class="grid__column-2-4">
+						<h3 class="footer__heading">
+							Danh mục 
+						</h3>	
+						<div>
+							<ul class='footer__menu'>
+									<li class="footer__menu--item"><a class='footer__menu--item-link'
+										href='/cakeshop'><span>
+										<i class="fa-solid fa-house-circle-check"></i>
+										Trang
+												chủ</span></a></li>
+									<li class="footer__menu--item"><a class='footer__menu--item-link'
+										href='/cakeshop/product'><span>
+										<i class="fa-solid fa-bowl-food"></i></i> 
+										Sản
+												phẩm</span></a></li>
+									<li class="footer__menu--item"><a class='footer__menu--item-link' href='/cakeshop/introduce'><span><i class="fa-solid fa-address-card"></i>
+									 Giới
+												thiệu</span></a></li>
+								</ul>
+						</div>
+					</div>
+					<div class="grid__column-2-4">
+						<h3 class="footer__heading">
+							Contact
+						</h3>	
+						<div >
+							<ul class="footer__navbar-list">
+						<li class="footer__navbar-item"><a href="/cakeshop/cart"
+							class="footer__navbar-item-link"> <i
+								class="fa-solid fa-cart-plus"></i> Giỏ hàng
+						</a></li>
+						<li id="loginf" class="footer__navbar-item"><a  href="/login"
+							class="footer__navbar-item-link footer__navbar-item-link--bold">
+								<i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng nhập
+						</a></li>
+						<li id="logoutf" class="footer__navbar-item"><a href="/login/logout"
+							class="footer__navbar-item-link footer__navbar-item-link--bold">
+								<i class="fa-solid fa-arrow-right-from-bracket"></i> LogOut
+						</a></li>
+						<li class="footer__navbar-item"><a href="/login/register"
+							class="footer__navbar-item-link footer__navbar-item-link--bold">
+								<i class="fa-brands fa-creative-commons-share"></i> Đăng ký
+						</a></li>
+					</ul>
+						</div>
+					</div>
+				</div>			
+			</div>	
+			</div>
+			<div class="final">
+				<h5 id="cuoicung" class="final__text"> 2023, Have good time</h5>
+			</div>
+		</footer>
+
+		<script>
+			let name = document.getElementById('linkname');
+			let call = name.innerText;
+			if(call.length > 7){
+				let log = document.getElementById('login');
+				let logf = document.getElementById('loginf');
+				let reg = document.getElementById('regis');
+				log.style.display = "none";
+				reg.style.display = "none";
+				logf.style.display = "none";
+			}
+			else{
+				let infn = document.getElementById('infname');
+				let logout = document.getElementById('logout');
+				let logoutf = document.getElementById('logoutf');
+				infn.style.display = "none";
+				logout.style.display = "none";
+				logoutf.style.display = "none";
+			}
+		</script>
+

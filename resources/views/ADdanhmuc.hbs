@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Responsive bootstrap 4 admin template" name="description">
+        <meta content="Coderthemes" name="author">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <link href="/public/css/main.css" rel="stylesheet">
+          <link href="/public/css/admin.css" rel="stylesheet">
+     <link
+	href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css"
+	rel="stylesheet">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/public/assets/images/favicon.ico">
+
+        <!-- Responsive Table css -->
+        <link href="/public/assets/libs/rwd-table/rwd-table.min.css" rel="stylesheet" type="text/css">
+
+        <!-- App css -->
+        <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
+        <link href="/public/assets/css/icons.min.css" rel="stylesheet" type="text/css">
+        <link href="/public/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
+      
+
+    </head>
+    <body data-layout="horizontal">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Navigation Bar-->
+            <header id="topnav">
+                    <!-- Topbar Start -->
+                    <div class="navbar-custom">
+                        <div class="container-fluid">
+                            <ul class="list-unstyled topnav-menu float-right mb-0">    
+                               <li class="header__navbar-item"><a class="linkten" style="font-size: 20px;" href="/login/getinfor">Xin chào: {{name}} </a>
+						</a></li>
+						<li class="header__navbar-item"><a class="linkten" style="font-size: 20px;" href="/login/logout"
+							class="header__navbar-item-link header__navbar-item-link--bold">
+								<i class="fa-solid fa-arrow-right-from-bracket"></i> LogOut
+						</a></li>
+    
+                            </ul>
+                             <!-- LOGO -->
+                              <div class="logo "><i class=" fa-solid fa-utensils"></i> GOODCAKE</div>
+                            
+                           
+    
+                           
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- end Topbar -->  
+
+                     <div class="topbar-menu">
+                        <div class="container-fluid">
+                            <div id="navigation">
+                                <!-- Navigation Menu-->
+                                <ul class="navigation-menu">
+                                    <li class="has-submenu">
+                                        <a href="/admin"> <i class="mdi mdi-view-dashboard"></i>Khách hàng</a>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                       <a> <i class="mdi mdi-view-dashboard"></i>Danh mục</a>
+                                        <ul class="submenu">
+                                            <li><a href="/admin/category">Tất cả danh mục</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                       <a> <i class="mdi mdi-view-dashboard"></i>Sản phẩm</a>
+                                        <ul class="submenu">
+                                            <li><a href="/admin/product/add">Thêm sản phẩm</a></li>
+                                            <li><a href="/admin/product">Tất cả sản phẩm</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                        <a href="#"> <i class="mdi mdi-view-dashboard"></i>Đơn hàng</a>
+                                        <ul class="submenu">
+                                           <li><a href="/admin/bill/1">Chờ xác nhận</a></li>
+                                            <li><a href="/admin/bill/2">Đang chuẩn bị</a></li>
+                                            <li><a href="/admin/bill/3">Đang giao</a></li>
+                                            <li><a href="/admin/bill/4">Đã thanh toán</a></li>
+                                            <li><a href="/admin/bill/5">Tất cả đơn hàng</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a> <i class="mdi mdi-view-dashboard"></i>Thống kê doanh thu</a>
+                                        <ul class="submenu">
+                                            <li><a href="/admin/revenue">Theo năm</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                                <!-- End navigation menu -->
+                                 <form id="search">
+							<div class="headerbelow__navbar-search" style="margin: 13px 0px 0px 355px;">
+								<input type="text" id="search" name="search" class="headerbelow__navbar-input"
+									placeholder="Tìm kiếm..." style="outline: auto; padding: 0 8px; width: 119%;">                                    
+							</div>
+							<div style="display: inline;">
+                                 <button class="headerbelow__navbar-search-btn" style="padding: 1px 6px; background-color:gray; border-radius: 4px;">
+									<i
+										class="headerbelow__navbar-search-btn-icon fa-solid fa-magnifying-glass-dollar" style="color: white; "></i>
+								</button>
+                            </div>
+								
+							</form>
+                             <script>
+                                let path = window.location.pathname;
+                                if(path.indexOf("product") != -1)
+                                {
+                                    document.getElementById('search').action = "/admin/product/search";
+                                }
+                                else{
+                                    document.getElementById('search').action = "/admin/search";
+                                }
+                            </script>
+    
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- end #navigation -->
+                        </div>
+                        <!-- end container -->
+                    </div> 
+                </header>
+
+                <!-- End Navigation Bar-->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    
+                                    <h4 class="page-title">Quản lí danh mục</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <div class="table-rep-plugin">
+                                        <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                             <form action="/admin/category/add"  method="post" class='signform form' id="form-1">
+                                             <label  class="col-sm-4 control-label form-label">Thêm danh mục</label>
+                                                        <div class="form-group">
+                                                        <input class="form-control1 form-control" name="namenhap" id="namenhap"  placeholder="Nhập tên danh mục...">
+                                                        <span class="form-message"></span>
+                                                        </div>                                                      
+                                                        <button >Thêm</button> 
+                                                    </form> 
+            
+                                            <script src="/public/validate.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Mong muốn của chúng ta
+        Validator({
+          form: '#form-1',
+          formGroupSelector: '.form-group',
+          errorSelector: '.form-message',
+          rules: [
+            Validator.isRequired('#namenhap', 'Vui lòng nhập tên danh mục'),
+           
+          ],
+          //onSubmit: function (data) {
+            // Call API
+                //const options = {
+ 
+          //}
+        });
+      });
+    </script>
+    
+
+
+       
+                                    </div>
+                                            <table id="tech-companies-1" class="table table-striped mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th data-priority="1">Tên danh mục</th>
+                                                        <th data-priority="1">Sản phẩm theo danh mục</th>
+                                                        <th data-priority="3">Sửa</th>
+                                                        <th data-priority="3">Xóa</th>
+                                                
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {{#each result}}
+                                                    <form id="form{{this.Id_category}}"  method="post">
+                                                    <tr class = "item">
+                                                        <td>{{this.Id_category}}</td>
+                                                        <td><div><input name="name" id="name" value="{{this.Name_category}}">
+                                                        <span class="form-message"></span>
+                                                        </td>
+                                                        <td><a href="/admin/category/procart/{{this.Id_category}}" style="color: black; cursor: pointer;"><i class="mdi mdi-view-dashboard"></i> {{this.Name_category}}</a></td>
+                                                         <td><button id="button{{this.Id_category}}" onclick="update(`form{{this.Id_category}}`)">Sửa</button> </td>
+                                                          <td><button id="buttonx{{this.Id_category}}" onclick="xoa(`form{{this.Id_category}}`) ">xóa</button></td>  
+                                                    </tr>                                                     
+                                                    <script>
+                                                        function update(a){
+                                                            if(confirm('Bạn chắc chắn với sửa đổi ?') == true)
+                                                            {
+                                                            let idcate = a.split('m');
+                                                            idcate=idcate[idcate.length-1]*1;
+                                                            document.getElementById(a).action = `/admin/category/update/${idcate}`;
+                                                            }else{
+                                                                document.getElementById(a).action = `/admin/category/update/-1`;
+                                                            }
+                                                        }
+                                                     </script>
+                                                     <script>
+                                                        function xoa(a){
+                                                            if(confirm('Bạn chắc chắn muốn xóa danh mục ?') == true)
+                                                            {
+                                                             let idcate = a.split('m');
+                                                            idcate=idcate[idcate.length-1]*1;
+                                                            document.getElementById(a).action = `/admin/category/delete/${idcate}`;
+                                                            }else{
+                                                                document.getElementById(a).action = `/admin/category/delete/-1`;
+                                                            }
+                                                        }
+                                                     </script>
+                                                     </form>
+                                                    {{/each}}
+                                                        {{#each prooncart}}
+                                                    <script>
+                                                        document.getElementById(`buttonx{{this.Id_category}}`).disabled = true;                                                     
+                                                    </script>   
+                                                    {{/each}}
+                                                                                               
+                                                </tbody>
+                                            </table>                                          
+    </div>
+
+ 
+                                            <ul class="listPage">
+           
+                                            </ul> 
+                                            <script src="/public/pageging.js"></script>
+                                        </div>
+                                         
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                    </div>
+                    <!-- end container-fluid -->
+                    
+
+                </div>
+                <!-- end content -->
+   
+
+                <!-- Footer Start -->
+                <footer class="footer" style="padding: 10px 15px 10px;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+				<h5 class="final__text" style="font-size: 20px; color: black;"> 2023, Have good time</h5>                             
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+           
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Vendor js -->
+       <!-- <script src="/public/assets/js/vendor.min.js"></script> 
+
+        <!-- Responsive Table js -->
+        <script src="/public/assets/libs/rwd-table/rwd-table.min.js"></script>
+
+        <!-- Init js -->
+        <script src="/public/assets/js/pages/responsive-table.init.js"></script>
+
+        <!-- App js -->
+        <script src="/public/assets/js/app.min.js"></script>
+        <script src="/public/assets/js/pages/datatables.init.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CakeShop</title>
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+	rel="stylesheet">
+<link href="/public/css/main.css" rel="stylesheet">
+<link href="/public/css/base.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+	rel="stylesheet">
+<link
+	href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link href="/public/css/sanpham.css" rel="stylesheet">
+	<link href="/public/css/dangnhap.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="app">
+		<header class="header">
+			<div class="grid">
+				<nav class="header__navbar">
+					<ul class="header__navbar-list">
+						<li class="header__navbar-item header__navbar-item--text"><i
+							class="fa-solid fa-phone"></i> Hostline: 0353739060</li>
+					</ul>
+
+					<ul class="header__navbar-list">
+						<li class="header__navbar-item"><a href="/cakeshop/cart"
+							class="header__navbar-item-link"> <i
+								class="fa-solid fa-cart-plus"></i> Giỏ hàng
+						</a></li>
+						<li class="header__navbar-item"><a href="/login"
+							class="header__navbar-item-link header__navbar-item-link--bold">
+								<i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng nhập
+						</a></li>
+						<li class="header__navbar-item"><a href="/login/register"
+							class="header__navbar-item-link header__navbar-item-link--bold">
+								<i class="fa-brands fa-creative-commons-share"></i> Đăng ký
+						</a></li>
+					</ul>
+				</nav>
+
+			</div>
+
+		</header>
+		<div>
+			<div class="headerbelow">
+				<div class="grid">
+					<div class="headerbelow__list">
+						<div class="headerbelow__list-brand">
+							<ul class="headerbelow__navbar-list">
+								<li class="headerbelow__navbar-brand"><i
+									class="headerbelow__navbar--icon fa-solid fa-utensils"></i>
+									GOODCAKE</li>
+								<li class="headerbelow__navbar-slogan">Ngọt ngào đưa đến hạnh phúc</li>
+							</ul>
+						</div>
+						<div class="headerbelow__navbar-search-list">
+							<div class="headerbelow__navbar-search">
+								<input type="text" class="headerbelow__navbar-input"
+									placeholder="Tìm kiếm...">
+							</div>
+							<div class="headerbelow__navbar-search-btn-block">
+								<button class="headerbelow__navbar-search-btn">
+									<i
+										class="headerbelow__navbar-search-btn-icon fa-solid fa-magnifying-glass-dollar"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="grid">
+				<div>
+					<div class="">
+						<div class="row">
+							<nav class="collapse navbar-collapse bs-navbar-collapse"
+								role="navigation">
+								<ul class='main-nav nav navbar-nav menu'>
+									<li class="menu level0"><a class=''
+										href='/cakeshop'><span>Trang
+												chủ</span></a></li>
+									<li class="menu level0"><a class=''
+										href='/cakeshop/product'>Sản
+												phẩm</a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/introduce'><span>Giới
+												thiệu</span></a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/contact'><span>Liên
+												hệ</span></a></li>
+								</ul>
+								<hr>
+							</nav>
+						</div>
+					</div>
+				</div>
+				</div>
+<div class="product__contianer">
+			<div class="grid">
+				<div class="grid__row">
+					<div class="grid__column-2">
+						<nav class="category">
+							<h3 class="category__heading">
+								<i class="category__heading-icon fas fa-list"></i> Danh mục
+							</h3>
+							<ul class="category-list">
+								<li class="category-item "><a href="/login"
+									class="category-item__link"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+									Đăng nhập</a>
+									<hr></li>
+								<li class="category-item "><a href="/login/register"
+									class="category-item__link"> <i class="fa-brands fa-creative-commons-share"></i>
+									Đăng kí</a>
+									<hr></li>
+								<li class="category-item "><a href="/login/forgetpass"
+									class="category-item__link">
+									<i class="fa-brands fa-creative-commons-share"></i>
+									Quên mật khẩu</a>
+									<hr></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="grid__column-10">
+						<div>
+							<h3 class="category__heading">
+								<i class="category__heading-icon fas fa-list"></i> Đăng nhập hệ thống
+							</h3>
+						</div>
+						<div class="grid__row2	">
+							</div>
+							<form action="/login" class="form-horizontal ng-pristine ng-valid-email ng-invalid ng-invalid-required" ng-submit="login()"  method= "Post" >
+            <div class="form-group">
+                <label for="Email" class="col-sm-4 control-label">Email</label>
+                <div class="col-sm-8">
+                    <input id="username" name="username"  class="form-control1 ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required"  ng-required="true" required="required" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Password" class="col-sm-41 control-label">Mật khẩu</label>
+                <div class="col-sm-8">
+                    <input id="password" name="password"  class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" type="password"  ng-required="true" required="required" >
+                </div>
+            </div>
+            <h4 class="thongbao" style="margin-left: 100px;">{{message}}</h4>
+            <div class="form-group2">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                    <a class="line-quenmk" href="/login/forgetpass">Quên mật khẩu?</a>
+                </div>
+            </div>
+        </form>					
+				</div>
+			</div>
+			</div>
+<footer class="footer">
+			<div class="grid">
+			<div class="footer__center">
+				<div class="footer__Brand">
+					<div class="footer__list-brand">
+							<ul class="footer__navbar-list">
+								<li class="footer__navbar-brand"><i
+									class="footer__navbar--icon fa-solid fa-utensils"></i>
+									GOODCAKE</li>
+								<li class="footer__navbar-slogan">ngon và tốt cho sức
+									khỏe</li>
+							</ul>
+						</div>
+				</div>
+				<div class="grid__row21">
+					<div class="grid__column-2-4">
+						<h3 class="footer__heading">
+							Thông tin liên hệ
+						</h3>
+						<ul class="footer__list">
+								<li class="footer__list--text"><i
+							class="fa-solid fa-phone"></i> Hostline: 0353739060</li>
+						</ul>
+				</div>
+					<div class="grid__column-2-4">
+						<h3 class="footer__heading">
+							Danh mục 
+						</h3>	
+						<div>
+							<ul class='footer__menu'>
+									<li class="footer__menu--item"><a class='footer__menu--item-link'
+										href='/cakeshop'><span>
+										<i class="fa-solid fa-house-circle-check"></i>
+										Trang
+												chủ</span></a></li>
+									<li class="footer__menu--item"><a class='footer__menu--item-link'
+										href='/cakeshop/product'><span>
+										<i class="fa-solid fa-bowl-food"></i></i> 
+										Sản
+												phẩm</span></a></li>
+									<li class="footer__menu--item"><a class='footer__menu--item-link' href='/cakeshop/contact'><span> <i class="fa-solid fa-newspaper"></i> 
+									Liên
+												hệ</span></a></li>
+									<li class="footer__menu--item"><a class='footer__menu--item-link' href='/cakeshop/introduce'><span><i class="fa-solid fa-address-card"></i>
+									 Giới
+												thiệu</span></a></li>
+								</ul>
+						</div>
+					</div>
+					<div class="grid__column-2-4">
+						<h3 class="footer__heading">
+							Contact
+						</h3>	
+						<div >
+							<ul class="footer__navbar-list">
+						<li class="footer__navbar-item"><a href="/cakeshop/cart"
+							class="footer__navbar-item-link"> <i
+								class="fa-solid fa-cart-plus"></i> Giỏ hàng
+						</a></li>
+						<li class="footer__navbar-item"><a href="/login"
+							class="footer__navbar-item-link footer__navbar-item-link--bold">
+								<i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng nhập
+						</a></li>
+						<li class="footer__navbar-item"><a href="/login/register"
+							class="footer__navbar-item-link footer__navbar-item-link--bold">
+								<i class="fa-brands fa-creative-commons-share"></i> Đăng ký
+						</a></li>
+					</ul>
+						</div>
+					</div>
+				</div>			
+			</div>	
+			</div>
+			<div class="final">
+				<h5 class="final__text"> 2023, Have good time</h5>
+			</div>
+		</footer>
+</body>
+</html>

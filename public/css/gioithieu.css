@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* gioi thieu */
+.back_trangchu{
+	color:#D74B33;
+	font-size:15px;
+	margin-left: 30px;
+}
+.gioi_thieu{
+	margin-left: 30px;
+}
+.doan_gt{
+	font-size:18px;
+	line-height:40px;
+	height: 500px;
+}
+.menu_level1{
+background: #d74b33;
+color: #ffffff!important;
+padding: 10px 10px 10px 10px;
+font: normal 16px/50px Open Sans;
+font-weight: 950;    
+text-transform:uppercase;               
+text-align:center;
+text-decoration: none;
+}
+
+.btn{
+	height:20px;
+	margin: 0px 20px ;
+	border-radius: 4px;
+	font-size:14px;
+}
+.thongbao{
+	padding:30px 0px 30px 0px;
+	font-size: 20px;	
+}

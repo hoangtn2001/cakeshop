@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+	rel="stylesheet">
+<link href="/public/css/main.css" rel="stylesheet">
+<link href="/public/css/base.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+	rel="stylesheet">
+<link
+	href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link href="/public/css/sanpham.css" rel="stylesheet">
+</head>
+<body>
+	{{> Header}}
+<div class="grid">
+				<div>
+					<div class="">
+						<div class="row">
+							<nav class="collapse navbar-collapse bs-navbar-collapse"
+								role="navigation">
+								<ul class='main-nav nav navbar-nav menu'>
+									<li class="menu level0"><a class=''
+										href='/cakeshop'><span>Trang
+												chủ</span></a></li>
+									<li >
+										<span class="menu_level1">Sản phẩm</span></li>
+									<li class="menu level0"><a class='' href='/cakeshop/introduce'><span>Giới
+												thiệu</span></a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/contact'><span>Liên
+												hệ</span></a></li>
+								</ul>
+								<hr>
+							</nav>
+						</div>
+					</div>
+				</div>
+				</div>
+<div class="product__contianer">
+			<div class="grid">
+				<div class="grid__row">
+					<div class="grid__column-2">
+						<nav class="category">
+							<h3 class="category__heading">
+								<i class="category__heading-icon fas fa-list"></i> Danh mục
+							</h3>
+							<ul class="category-list">
+								 {{#each cate}}
+								<li class="category-item "><a id="cate{{this.Id_category}}" href="/cakeshop/product/category/{{this.Id_category}}" class="category-item__link">{{this.Name_category}}</a>
+									<hr></li>
+                                {{/each}}
+							</ul>
+						</nav>
+						<script>
+							if(window.location.pathname.indexOf("category") != -1)
+							{
+								let a = window.location.pathname.split("/")[window.location.pathname.split("/").length-1]*1;
+								document.getElementById('cate'+a).style = 'color: red;';
+							}
+						</script>
+					</div>
+					<div class="grid__column-10">
+					<select class="sapxep" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value )">
+				<option value ="">Sắp xếp theo giá</option>
+				<option id="op1" value="?fied=price&sort=desc">Giá từ cao đến thấp</option>
+				<option id="op2" value="?fied=price&sort=asc">Giá từ thấp đến cao</option>
+			</select>
+			<script>
+				if(window.location.href.indexOf("search") != -1 )
+				{
+					const a = window.location.href.split(/[?,&]/)[1];
+
+					document.getElementById("op1").value='?'+a+'&fied=price&sort=desc';
+					document.getElementById("op2").value='?'+a+'&fied=price&sort=asc';
+				}
+				
+			</script>
+						<div>
+							<h3 class="category__heading">
+								<i class="category__heading-icon fas fa-list"></i> Sản Phẩm
+							</h3>
+						</div>
+						 
+						<div class="grid__row2	">
+								{{#each product}}
+							<div class="item grid__column-2-4">							
+									<div class="slider-product">
+										<div class="product__infor-img">
+											<div class="img"
+												style="background-image: url({{this.Link_image}})"></div>
+											<div class="over__lay">
+												<a class="btn__buy" href="/cakeshop/product/id/{{this.Id_product}}">mua ngay</a>
+											</div>
+										</div>
+										<div class="product__detail">
+											<h4 class="product__name">{{this.Name_product}}</h4>
+											<div class="product__price">
+												<h4 id="giatien{{this.Id_product}}" class="product__price-gia">{{this.Price}}</h4>
+												<h4 id="soluong{{this.Id_product}}" class="product__price-gia"></h4>
+											</div>
+										</div>
+									</div>								
+							</div>
+							<script>
+								if({{this.Quantity_pro}} - {{this.Quantity_pro_bought}} > 0){
+							document.getElementById("soluong{{this.Id_product}}").innerText = "Số lượng bánh: " + String({{this.Quantity_pro}} - {{this.Quantity_pro_bought}})
+								}else{
+									document.getElementById("soluong{{this.Id_product}}").innerText = `Số lượng bánh: 0`
+								}
+								  document.getElementById("giatien{{this.Id_product}}").innerText =  `${document.getElementById("giatien{{this.Id_product}}").innerText}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')+ " VND" 
+							</script>
+							{{/each}}	
+		
+			
+			
+			
+					</div>
+					<ul class="listPage">
+           
+                                            </ul> 
+                                            <script src="/public/Propageging.js"></script>
+				</div>
+			</div>
+			</div>
+			</div>
+	{{> Footer}}
+</body>
+</html>

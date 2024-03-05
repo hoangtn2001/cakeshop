@@ -1,0 +1,21 @@
+.image {
+    height: 80px;
+    width: 110px;
+    border-radius: 4px;
+}
+.form-label{
+    font-size: 18px;
+}
+.form-message{
+    color: red;
+}
+.nutnhan{
+    background-color:#dedede;
+    color:black;
+    margin:31px 0px 15px 10px;
+}
+.nutnhan:hover{
+    background-color:#bdbdbd;
+    color:#00641d
+
+}

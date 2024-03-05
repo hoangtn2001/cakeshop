@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+<link href="/public/css/main.css" rel="stylesheet">
+<link href="/public/css/base.css" rel="stylesheet">
+<link href="/public/css/giohang.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+</head>
+<body>
+{{> Header}}
+		<div class="container">
+			<div class="grid">
+				<div>
+					<div class="">
+						<div class="row">
+							<nav class="collapse navbar-collapse bs-navbar-collapse"
+								role="navigation">
+								<ul class='main-nav nav navbar-nav menu'>
+									<li class="menu level0"><a class=''
+										href='/cakeshop'>Trang
+												chủ</a></li>
+									<li class="menu level0"><a class=''
+										href='/cakeshop/product'>Sản
+												phẩm</a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/introduce'>Giới
+												thiệu</a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/contact'>Liên
+												hệ</a></li>
+									<li class="menu level0" style="margin-left: 430px;"><a class='' href='/cakeshop/cart/inf/confirm'>Theo giõi đơn hàng</a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/history'>Lịch sử mua</a></li>
+								</ul>
+								<hr>
+							</nav>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+	<div class='container gio_hang'>
+	<div class='grid'>
+		<table class='trong_giohang'>
+			<tr >
+				<th>Sản phẩm</th>
+				<th>Số lượng</th>
+				<th>Tổng giá</th>
+				<th></th>
+			</tr>
+			{{#each product}}
+			<tr style="text-align: center;" class="item">
+				<td>
+					<div class='san_pham'>
+						<img src='{{this.Link_image}}'>
+						<div>
+							<p>{{this.Name_product}}
+							<small id="tonggia{{this.Id_cart}}">Giá: {{this.Price}}</small>
+						</div>
+					</div>
+				</td>
+				<td>{{this.Quantity}}</td>
+				<td id="giatien{{this.Id_cart_detail}}">{{this.Total_price}}</td>
+				<td><a class="nutnhan" href="/cakeshop/cart/{{this.Id_cart_detail}}" onclick="return confirm('Bạn muốn bỏ sản phẩm này khỏi giỏ hàng?');">Huỷ<i class="fa-solid fa-trash"></i></a></td>
+			</tr>
+			<script>
+								  document.getElementById("giatien{{this.Id_cart_detail}}").innerText =  `${document.getElementById("giatien{{this.Id_cart_detail}}").innerText}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' VND';
+								   document.getElementById("tonggia{{this.Id_cart_detail}}").innerText =  `${document.getElementById("tonggia{{this.Id_cart_detail}}").innerText}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' VND';
+
+							</script>
+			{{/each}}
+		</table>
+	
+ <ul class="listPage">
+           
+                                            </ul> 
+                                            <script src="/public/pageging.js"></script>
+		<form action="/cakeshop/cart/inf" method="post" id="form-1">
+			{{!-- <input style="display: none;" type="text" name="cartcode" value="{{cartcode}}"> --}}
+			<input style="display: none;" type="text" name="tongtien" value="{{tongtien}}">
+			{{#each user}}
+			<div class="form-group">
+                <label for="Email" class="col-sm-4 control-label">Địa chỉ nhận hàng</label>
+                <div class="col-sm-8">
+                    <input id="diachi" name="diachi"  value="{{this.Address}}" class="form-control1 ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required"  ng-required="true" required="required" >
+					<span></span>
+					<span class="form-message"></span>
+                </div>
+				<div class="form-group">
+                <label for="Email" class="col-sm-4 control-label">Số điện thoại người nhận</label>
+                <div class="col-sm-8">
+                    <input id="phone" name="phone"  value="{{this.Phone_number}}" class="form-control1 ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required"  ng-required="true" required="required" >
+					<br>
+					<span class="form-message"></span>
+                </div>
+            </div>	
+			{{/each}}
+		<h1 style="font-size: 28px; margin: 0px 0px 20px 340px; font-weight: 100; color: red;">	{{message}} </h1>
+			<button id = "btnthanhtoan" class="thanhtoan" onclick="return confirm('Tổng số tiền bạn cần trả là: {{tongtien}} VND');">Thanh toán</button>
+		</form>
+		</div>
+	</div>	
+	{{#each product}}
+			<script>
+				if({{this.Quantity}} == 0){
+					document.getElementById("btnthanhtoan").innerText = "Hết hàng";
+					document.getElementById("btnthanhtoan").disabled = true;
+					document.getElementById("btnthanhtoan").removeAttribute("class");
+				}
+				</script>
+	{{/each}}
+	 <script src="/public/validate.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Mong muốn của chúng ta
+        Validator({
+          form: '#form-1',
+          formGroupSelector: '.form-group',
+          errorSelector: '.form-message',
+          rules: [
+			Validator.isRequired('#diachi', 'Vui lòng nhập địa chỉ nhận hàng'),
+			Validator.isRequired('#phone', 'Vui lòng nhập số điện thoại người nhận'),
+          ],
+          //onSubmit: function (data) {
+            // Call API
+                //const options = {
+ 
+          //}
+        });
+      });
+    </script>
+	</div>
+	</div>
+{{> Footer}}
+</body>
+</html>

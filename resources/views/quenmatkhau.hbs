@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+	rel="stylesheet">
+<link href="/public/css/main.css" rel="stylesheet">
+<link href="/public/css/base.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+	rel="stylesheet">
+<link
+	href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link href="/public/css/sanpham.css" rel="stylesheet">
+	<link href="/public/css/dangnhap.css" rel="stylesheet">
+</head>
+
+<body onload="getCaptcha()">
+	<div class="app">
+		<header class="header">
+			<div class="grid">
+				<nav class="header__navbar">
+					<ul class="header__navbar-list">
+						<li class="header__navbar-item header__navbar-item--text"><i
+							class="fa-solid fa-phone"></i> Hostline: 0353739060</li>
+					</ul>
+
+					<ul class="header__navbar-list">
+						<li class="header__navbar-item"><a href="/PTITHCMS1L1/thu7.htm"
+							class="header__navbar-item-link"> <i
+								class="fa-solid fa-cart-plus"></i> Giỏ hàng
+						</a></li>
+						<li class="header__navbar-item"><a href="/login"
+							class="header__navbar-item-link header__navbar-item-link--bold">
+								<i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng nhập
+						</a></li>
+						<li class="header__navbar-item"><a href="/login/register"
+							class="header__navbar-item-link header__navbar-item-link--bold">
+								<i class="fa-brands fa-creative-commons-share"></i> Đăng ký
+						</a></li>
+					</ul>
+				</nav>
+
+			</div>
+
+		</header>
+		<div>
+			<div class="headerbelow">
+				<div class="grid">
+					<div class="headerbelow__list">
+						<div class="headerbelow__list-brand">
+							<ul class="headerbelow__navbar-list">
+								<li class="headerbelow__navbar-brand"><i
+									class="headerbelow__navbar--icon fa-solid fa-utensils"></i>
+									GOODCAKE</li>
+								<li class="headerbelow__navbar-slogan">Ngọt ngào đưa đến hạnh phúc</li>
+							</ul>
+						</div>
+						<div class="headerbelow__navbar-search-list">
+							<div class="headerbelow__navbar-search">
+								<input type="text" class="headerbelow__navbar-input"
+									placeholder="Tìm kiếm...">
+							</div>
+							<div class="headerbelow__navbar-search-btn-block">
+								<button class="headerbelow__navbar-search-btn">
+									<i
+										class="headerbelow__navbar-search-btn-icon fa-solid fa-magnifying-glass-dollar"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="grid">
+				<div>
+					<div class="">
+						<div class="row">
+							<nav class="collapse navbar-collapse bs-navbar-collapse"
+								role="navigation">
+								<ul class='main-nav nav navbar-nav menu'>
+									<li class="menu level0"><a class=''
+										href='/cakeshop'><span>Trang
+												chủ</span></a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/product'><span>Sản phẩm</span></a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/introduce'><span>Giới
+												thiệu</span></a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/contact'><span>Liên
+												hệ</span></a></li>
+								</ul>
+								<hr>
+							</nav>
+						</div>
+					</div>
+				</div>
+				</div>
+<div class="product__contianer">
+			<div class="grid">
+				<div class="grid__row">
+					<div class="grid__column-2">
+						<nav class="category">
+							<h3 class="category__heading">
+								<i class="category__heading-icon fas fa-list"></i> Danh mục
+							</h3>
+							<ul class="category-list">
+								<li class="category-item "><a href="/login"
+									class="category-item__link"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+									Đăng nhập</a>
+									<hr></li>
+								<li class="category-item "><a href="/login/register"
+									class="category-item__link"> <i class="fa-brands fa-creative-commons-share"></i>
+									Đăng kí</a>
+									<hr></li>
+								<li class="category-item "><a href="/login/forgetpass"
+									class="category-item__link">
+									<i class="fa-brands fa-creative-commons-share"></i>
+									Quên mật khẩu</a>
+									<hr></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="grid__column-10">
+						<div>
+							<h3 class="category__heading">
+								<i class="category__heading-icon fas fa-list"></i> Quên mật khẩu
+							</h3>
+						</div>
+						<h3 style="color: red;" >{{message}}</h3>
+							<form action="/login/forgetpass" method="post" class="form-horizontal ng-pristine ng-valid-email ng-invalid ng-invalid-required" ng-submit="login()" id = "form-1">
+            <div class="form-group" style="padding-bottom: 20px;">
+                <label for="Email" class="col-sm-4 control-label">Email</label>
+                <div class="col-sm-8">
+                    <input name="email" id="email" placeholder="Email" type="email" class="form-control1 ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required" ng-model="Email" ng-required="true" required="required">
+					<span class="form-message" style="color: #f33a58;"></span> 
+                </div>
+            </div>
+
+				<div class="form-group" style="padding-bottom: 20px;">
+                <label  class="col-sm-4 control-label">Enter Code</label>
+                <div class="col-sm-8">
+                    <input class="form-control1 ng-pristine ng-untouched ng-invalid ng-invalid-required" style="margin-left: 7px ;" type="text" size="20" id="typedText" name="typedText" placeholder="Captcha">
+					<span class="form-message" style="color: #f33a58;"></span> 
+                </div>
+            </div>
+
+				<div class="form-group" style="padding-bottom: 20px;">
+                <label for="Email" class="col-sm-4 control-label">Captcha</label>
+                <div  class="col-sm-8" >
+                    <canvas class="form-control1" width="230" height="60"  style="border:  2px solid grey; margin-left: 28px; ;" id="canvas"></canvas>
+                </div>
+				<button  style="height: 20px; margin: 20px 0px 0 20px;" type="button" onclick="getCaptcha()">Refress</button> 
+            </div>
+                     
+            <div class="form-group2">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-primary">Gửi lại mật khẩu</button>             
+                    <a class="line-quenmk" href="/login">Quay lại đăng nhập</a>
+                </div>
+            </div>
+        </form>	
+		 <script src="/public/validate.js"></script>
+    <script>
+		function getRandIndex(maxLength){
+						return Math.floor(Math.random()*maxLength);
+					}
+					var data;
+					function getCaptcha(){
+						var canvas = document.getElementById('canvas');
+						var pen = canvas.getContext('2d');
+						var captch = Math.random().toString(36).substring(2, 8);
+						pen.font = "30px Georgia";
+						pen.fillStyle = "white";
+						pen.fillRect(0, 0, 400, 400);
+						pen.fillStyle = "blue";
+						maxLength = captch.length;
+						index1 = getRandIndex(maxLength);
+						index2 = getRandIndex(maxLength);
+						captch = captch.substring(0, index1-1)+captch[index1].toUpperCase()+captch.substring(index1+1, maxLength);
+						captch = captch.substring(0, index2-1)+captch[index2].toUpperCase()+captch.substring(index2+1, maxLength);
+						data = captch;
+						captch = captch.split('').join('');
+						pen.fillText(captch, 40, 40);
+					}
+      document.addEventListener('DOMContentLoaded', function () {
+        // Mong muốn của chúng ta
+        Validator({
+          form: '#form-1',
+          formGroupSelector: '.form-group',
+          errorSelector: '.form-message',
+          rules: [
+			Validator.isRequired('#typedText', 'Vui lòng không để trống'),
+			Validator.isRequired('#email', 'Vui lòng nhập Email'),
+            Validator.isEmail('#email'),
+			Validator.isConfirmed('#typedText', function () {
+              return data;
+            }, 'Mã Captcha không chính xác')     
+          ],
+        });
+      });
+    </script>					
+				</div>
+			</div>
+			</div>
+{{> Footer}}
+</body>
+</html>

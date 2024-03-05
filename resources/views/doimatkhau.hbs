@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="${pageContext.servletContext.contextPath}/">
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+	rel="stylesheet">
+<link href="/public/css/main.css" rel="stylesheet">
+<link href="/public/css/base.css" rel="stylesheet">
+<link href="/public/css/signup.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+	rel="stylesheet">
+<link
+	href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script type="text/javascript"></script>
+</head>
+
+{{> Header}}
+
+<div class="container">
+	<div class="grid">
+		<div>
+			<div class="">
+				<div class="row">
+					<nav class="collapse navbar-collapse bs-navbar-collapse"
+						role="navigation">
+						<ul class='main-nav nav navbar-nav menu'>
+							<li class="menu level0"><a class=''
+								href='/cakeshop'><span>Trang chủ</span></a></li>
+							<li class="menu level0"><a class=''
+								href='/cakeshop/product'>Sản phẩm</a></li>
+							<li class="menu level0"><a class=''
+								href='/cakeshop/introduce'><span>Giới thiệu</span></a></li>
+							<li class="menu level0"><a class=''
+								href='/cakeshop/contact'><span>Liên hệ</span></a></li>
+						</ul>
+						<hr>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="signup-box">
+			<h1 class='mid'>Đổi mật khẩu</h1>
+			<form action="/login/changepass" method="post" class='signform' id="form-1">
+				<div class="form-group">
+				<label>Old Password</label> 
+				<input name="old" type="password" id="old" placeholder=""  /> 
+				<span class="form-message"></span>
+				</div>
+				<div class="form-group">
+					<label>New Password</label>
+					 <input name="new" type="password" id="new" placeholder=""  />
+					 <span class="form-message"></span>
+					 </div>
+					 <div class="form-group">
+					  <label>Confirm Password</label> <input
+					name="rnew" type="password" id="rnew" placeholder=""  />
+					<span class="form-message"></span>
+					</div>
+				<button class="btn btnxacnhan" onclick="myFunction()">Xác nhận</button>
+			</form>
+			
+			<h2 style = "color: red;">{{message}}</h2>			
+		</div>
+		<p class='haveaccount'></p>
+	</div>
+</div>
+ <script src="/public/validate.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Mong muốn của chúng ta
+        Validator({
+          form: '#form-1',
+          formGroupSelector: '.form-group',
+          errorSelector: '.form-message',
+          rules: [
+            Validator.isRequired('#old', 'Vui lòng nhập mật khẩu hiện tại của bạn'),
+			Validator.isRequired('#new', 'Vui lòng nhập mật khẩu mới'),
+            Validator.minLength('#new', 6),
+            Validator.isRequired('#rnew'),
+            Validator.isConfirmed('#rnew', function () {
+              return document.querySelector('#form-1 #new').value;
+            }, 'Mật khẩu nhập lại không chính xác')
+          ],
+          //onSubmit: function (data) {
+            // Call API
+                //const options = {
+ 
+          //}
+        });
+      });
+    </script>
+
+{{> Footer}}
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+<link href="/public/css/main.css" rel="stylesheet">
+<link href="/public/css/base.css" rel="stylesheet">
+<link href="/public/css/signup.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="/public/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+</head>
+<body>
+	<div class="app">
+		<header class="header">
+			<div class="grid">
+				<nav class="header__navbar">
+					<ul class="header__navbar-list">
+						<li class="header__navbar-item header__navbar-item--text"><i
+							class="fa-solid fa-phone"></i> Hostline: 0353739060</li>
+					</ul>
+
+					<ul class="header__navbar-list">
+						<li class="header__navbar-item"><a href="/cakeshop/cart"
+							class="header__navbar-item-link"> <i
+								class="fa-solid fa-cart-plus"></i> Giỏ hàng
+						</a></li>
+						<li class="header__navbar-item"><a href="/login"
+							class="header__navbar-item-link header__navbar-item-link--bold">
+								<i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng nhập
+						</a></li>
+						<li class="header__navbar-item"><a href="/login/register"
+							class="header__navbar-item-link header__navbar-item-link--bold">
+								<i class="fa-brands fa-creative-commons-share"></i> Đăng ký
+						</a></li>
+					</ul>
+				</nav>
+
+			</div>
+
+		</header>
+		<div>
+			<div class="headerbelow">
+				<div class="grid">
+					<div class="headerbelow__list">
+						<div class="headerbelow__list-brand">
+							<ul class="headerbelow__navbar-list">
+								<li class="headerbelow__navbar-brand"><i
+									class="headerbelow__navbar--icon fa-solid fa-utensils"></i>
+									GOODFOOD</li>
+								<li class="headerbelow__navbar-slogan">ngon và tốt cho sức
+									khỏe</li>
+							</ul>
+						</div>
+						<div class="headerbelow__navbar-search-list">
+							<div class="headerbelow__navbar-search">
+								<input type="text" class="headerbelow__navbar-input"
+									placeholder="Tìm kiếm...">
+							</div>
+							<div class="headerbelow__navbar-search-btn-block">
+								<button class="headerbelow__navbar-search-btn">
+									<i
+										class="headerbelow__navbar-search-btn-icon fa-solid fa-magnifying-glass-dollar"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="grid">
+				<div>
+					<div class="">
+						<div class="row">
+							<nav class="collapse navbar-collapse bs-navbar-collapse"
+								role="navigation">
+								<ul class='main-nav nav navbar-nav menu'>
+									<li class="menu level0"><a class=''
+										href='/cakeshop'><span>Trang
+												chủ</span></a></li>
+									<li class="menu level0"><a class=''
+										href='/cakeshop/product'>Sản
+												phẩm</a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/introduce'><span>Giới
+												thiệu</span></a></li>
+									<li class="menu level0"><a class='' href='/cakeshop/contact'><span>Liên
+												hệ</span></a></li>
+								</ul>
+								<hr>
+							</nav>
+						</div>
+					</div>
+				</div>
+	<div class="signup-box">
+	<h1 class='mid'>Đăng ký</h1>
+    <h4>Miễn phí và chỉ cần bỏ chút thời gian</h4>
+	<h2 style="color: red;">{{message}}</h2>
+	<form action="/login/register" method="post" class='signform form' id="form-1">
+			 <div class="form-group">
+                <label for="Email" class="col-sm-4 control-label form-label">Email</label>
+                <div class="col-sm-8">
+                    <input id="email" name="email"  class="form-control1 form-control ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required"  ng-required="true" required="required" >
+					<span  style="color: red;" class="form-message"></span>
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label for="Password" class="col-sm-41 control-label">Password</label>
+                <div class="col-sm-8">
+                    <input type="password" id="password" name="password"  class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required"  ng-required="true" required="required" >
+					<span  style="color: red;" class="form-message"></span>
+                </div>
+            </div>
+			<div class="form-group">
+                <label for="Password" class="col-sm-41 control-label">Confirm password</label>
+                <div class="col-sm-8">
+                    <input type="password" id="password_confirmation" name="password_confirmation"  class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required"  ng-required="true" required="required" >
+					<span  style="color: red;" class="form-message"></span>
+                </div>
+            </div>	
+			<p class='elseinfo'>Thông tin khác </p>
+			
+			<div class="form-group">
+                <label for="Email" class="col-sm-4 control-label">Full Name</label>
+                <div class="col-sm-8">
+                    <input id="fullname" name="fullname"  class="form-control1 ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required"  ng-required="true" required="required" >
+					<span  style="color: red;" class="form-message"></span>
+                </div>
+            </div>
+				<div class="form-group">
+					<label for="Email" class="col-sm-4 control-label">Sex:</label>
+				<select id="sex" name="sex" class="select">		
+				<option value="0">Nam</option>
+				<option value="1">Nữ</option>
+				</select>
+				</div>
+			<div class="form-group">
+                <label for="Email" class="col-sm-4 control-label">Address</label>
+                <div class="col-sm-8">
+                    <input id="address" name="address"  class="form-control1 ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required"  ng-required="true" required="required" >
+					<span  style="color: red;" class="form-message"></span>
+                </div>
+            </div>
+			
+			<div class="form-group">
+                <label for="Email" class="col-sm-4 control-label">Phone Number</label>
+                <div class="col-sm-8">
+                    <input id="phone" name="phone"  class="form-control1 ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required"  ng-required="true" required="required" >
+					<span style="color: red;" class="form-message"></span>
+                </div>
+            </div>	
+			<button type="submit" class="btn btnxacnhan">Đăng ký</button>	
+	</form>
+    </div>
+	    <p class='haveaccount'>
+      Đã có tài khoản? <a href="/login">Đăng nhập ở đây</a>
+    </p>
+				</div>
+				</div>	
+	
+</body>
+
+    <script src="/public/validate.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Mong muốn của chúng ta
+        Validator({
+          form: '#form-1',
+          formGroupSelector: '.form-group',
+          errorSelector: '.form-message',
+          rules: [
+            Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+			Validator.isRequired('#address', 'Vui lòng nhập địa chỉ'),
+			Validator.isRequired('#phone', 'Vui lòng nhập số điện thoại'),
+            Validator.isEmail('#email'),
+            Validator.minLength('#password', 6),
+            Validator.isRequired('#password_confirmation'),
+            Validator.isConfirmed('#password_confirmation', function () {
+              return document.querySelector('#form-1 #password').value;
+            }, 'Mật khẩu nhập lại không chính xác')
+          ],
+          //onSubmit: function (data) {
+            // Call API
+                //const options = {
+ 
+          //}
+        });
+      });
+    </script>
+
+</html>

@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+.menu_level1{
+	background: #d74b33;
+	color: #ffffff!important;
+	padding: 10px 10px 10px 10px;
+	font: normal 16px/50px Open Sans;
+font-weight: 950;    
+text-transform:uppercase;               
+text-align:center;
+text-decoration: none;
+}
+.sapxep {
+    text-decoration: none;
+    font-size: 17px;
+    padding-right: -38px;
+    color: black;
+    border-radius: 5px;
+	cursor: pointer;
+}
+.sapxep.active,
+.sapxep:hover{
+
+	color: rgba(1, 9, 92, 0.8);
+}
